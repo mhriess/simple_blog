@@ -11,4 +11,8 @@ class Article < ActiveRecord::Base
     else                  Article.all
     end
   end
+
+  def self.only(params)
+    self.limit(params[:limit]).ordered_by(params[:order_by])
+  end
 end

@@ -2,8 +2,7 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.ordered_by(params[:order_by])
-    # @articles = Article.all
+    @articles = Article.only(params)
 
     respond_to do |format|
       format.html # index.html.erb
